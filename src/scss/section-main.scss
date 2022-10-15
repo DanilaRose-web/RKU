@@ -1,0 +1,93 @@
+.section-main {
+   position: relative;
+}
+
+
+// Slider
+
+.main-slider {
+   position: relative;
+   .slide {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      .bg {
+         position: absolute;
+         // width: 100%;
+         // height: 100%;
+         top: 0;
+         left: 0;
+         transform: scale(1.2);
+         transition: all 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+         img {
+            max-width: fit-content;
+         }
+      }
+      .decor-img {
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         width: 834px;
+         @media all and (max-width: 1900px) {
+            right: calc((100vw - 1240px) / (1900 - 1240) * (0 + 280) - 280px);
+         }
+         @media all and (max-width: 1240px) {
+            right: -330px;
+         }
+      }
+      .content {
+         height: 100vh;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         position: relative;
+         min-height: 100%;
+         .info {
+            margin: 100px auto 0 auto;
+            padding: 0 15px;
+            max-width: 1250px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1 1 auto;
+         }
+      }
+      .name-wrap {
+         margin-top: 41px;
+         position: relative;
+         width: 100%;
+         align-self: flex-end;
+         &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 77%;
+            height: 100%;
+            background: linear-gradient(90deg, #000000 18.7%, rgba(0, 0, 0, 0) 99.4%);
+            filter: drop-shadow(0px -12px 25px rgba(46, 78, 96, 0.07));
+            z-index: 0;
+         }
+         .name {
+            margin: 0 auto;
+            padding: 18px 15px;
+            max-width: 1250px;
+            font-size: 20px;
+            line-height: 150%;
+            color: $text-color-lightness;
+            position: relative;
+            z-index: 1;
+         }
+      }
+   }
+}
+
+
+
+
+// ANIMATION SLIDER
+.main-slider .slick-active .slide .bg { transform: scale(1); }
+

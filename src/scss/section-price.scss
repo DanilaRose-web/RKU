@@ -1,0 +1,161 @@
+.section-price {
+   padding: 98px 0 90px 0;
+   background: url('../img/price/bg.jpg') no-repeat center / cover;
+   position: relative;
+   overflow: hidden;
+   .decr-img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 834px;
+      @media all and (max-width: 1900px) {
+         right: calc((100vw - 1240px) / (1900 - 1240) * (0 + 300) - 300px);
+      }
+      @media all and (max-width: 1240px) {
+         right: -300px;
+      }
+      @media all and (max-width: 700px) {
+         display: none;
+      }
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+}
+
+.section-price .heading.price-title {
+   margin-bottom: 93px;
+   &::after {
+      background: $text-color-lightness;
+   }
+}
+
+.price-row {
+   margin-left: 0;
+   margin-right: 0;
+   position: relative;
+   z-index: 1;
+   display: flex;
+   flex-wrap: nowrap;
+   align-items: flex-start;
+   justify-content: space-between;
+   @media all and (max-width: 992px) {
+      margin: 0 -15px;
+      flex-direction: column;
+      align-items: center;
+   }
+   .price-col {
+      padding-left: 0;
+      padding-right: 0;
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-out;
+      &:first-child {
+         margin-right: 109px;
+         @media all and (max-width: 992px) {
+            margin-right: 0;
+            padding-bottom: 30px;
+         }
+      }
+      @media all and (max-width: 992px) {
+         padding: 0 15px;
+      }
+      @media all and (max-width: 800px) {
+         flex: 0 0 100%;
+         max-width: 100%;
+      }
+      &.animate-show {
+         opacity: 1;
+         visibility: visible;
+         &:nth-child(2) {
+            transition-delay: 0.1s;
+         }
+      }
+      .price-item {
+         padding-bottom: 54px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         border-radius: 10px 10px 0 0;
+         background: rgba(255, 255, 255, 0.77);
+         backdrop-filter: blur(25px);
+         max-width: 530px;
+         width: 100%;
+         overflow: hidden;
+         transition: all 0.2s ease-out;
+         &:hover {
+            transform: translateY(-10px);
+            background: rgba(47, 50, 61, 0.77);;
+         }
+         .title {
+            padding: 34px 10px;
+            background: $bg-dark-title;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            color: $text-color-lightness;
+            width: 100%;
+            transition: all 0.2s ease-out;
+            @media all and (max-width: 440px) {
+               padding: 20px 10px;
+               font-size: 25px;
+            }
+         }
+         &:hover .title {
+            color: $decoration-color-1;
+         }
+         .content-box {
+            padding: 0 43px 53px 43px;
+            @media all and (max-width: 440px) {
+               padding: 0 20px 53px 20px;
+            }
+            .option {
+               padding: 26px 10px;
+               font-size: 24px;
+               line-height: 33px;
+               text-align: center;
+               color: #000000;
+               width: 100%;
+               &:not(:last-child) {
+                  border-bottom: 1px solid $border-grey-color;
+               }
+               @media all and (max-width: 440px) {
+                  padding: 20px 10px;
+                  font-size: 20px;
+               }
+            }
+            .text {
+               margin: 0 auto;
+               font-size: 14px;
+               font-weight: 400;
+               line-height: 150%;
+               color: $text-color-light;
+               width: 95%;
+            }
+         }
+         &:hover .option,
+         &:hover .text {
+            color: $text-color-lightness
+         }
+         &:hover .section-button.darkFirst {
+            color: $text-color-lightness;
+            background: transparent;
+            &:hover {
+               color: $decoration-color-1;
+               &::after {
+                  animation: moveAfter 0.3s ease-out forwards;
+               }
+            }
+            &::after {
+               animation: moveAfterRev 0.3s ease-out forwards;
+            }
+         }
+      }
+   }
+}

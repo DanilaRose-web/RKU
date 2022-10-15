@@ -1,0 +1,129 @@
+
+
+
+
+
+
+/* 
+ * если нужно отцентровать контент в меню по центру, то flex НЕ ИСИСПОЛЬЗОВАТЬ, только grid у элемента .mobile-menu
+*/
+
+.i-mobile-menu {
+   padding: 40px;
+   position: fixed;
+   right: -400px;
+   top: 0;
+   max-width: 400px;
+   width: 100%;
+   height: 100%;
+   background: $text-color-darkness;
+   overflow-y: auto;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr;
+   z-index: 3;
+   // box-shadow: -5px 0px 40px 20px rgb(0, 0, 0, 0.2);
+   transition: all 0.5s cubic-bezier(.16,.68,.18,1);
+}
+
+
+.i-mobile-menu.show {
+   right: 0;
+   transition: all 0.5s cubic-bezier(.16,.68,.18,1) 0.2s;
+   /* animation: showMenu 0.5s cubic-bezier(.16,.68,.18,1) 0.5s forwards; */
+}
+
+@keyframes showMenu {
+   0% { right: -400px; }
+   100% { right: 0 }
+}
+
+.content {
+   align-self: center;
+}
+
+.mobile-menu {
+   position: relative;
+   z-index: 1;
+}
+
+.mobile-navigation {
+   padding-bottom: 20px;
+   // border-bottom: 1px solid #9c9c9c;
+}
+
+.mobile-navigation li {
+   position: relative;
+   border-radius: 28px;
+   display: flex;
+   justify-content: center;
+}
+
+.mobile-navigation li a {
+   padding: 23px 20px;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 21px;
+   font-weight: 600;
+   line-height: 100%;
+   color: $text-color-lightness;
+   display: flex;
+   justify-content: center;
+   width: 200px;
+   text-align: center;
+   position: relative;
+   text-transform: uppercase;
+   transition: all 0.2s ease-out;
+}
+
+.mobile-navigation li:not(:last-child) a {
+   border-bottom: 1px solid #9c9c9c;
+}
+
+
+.mobile-navigation li:hover a {
+   color: $decoration-color-1;
+}
+
+
+
+
+
+.mob-socials {
+   margin: 30px auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   a {
+      display: flex;
+      width: 21px;
+      height: 21px;
+      &:not(:last-child) {
+         margin-right: 25px;
+      }
+      svg {
+         max-width: 100%;
+         height: auto;
+         fill: $text-color-lightness;
+         transition: all 0.2s ease-out;
+      }
+      &:hover {
+         svg {
+            transform: rotateY(360deg);
+         }
+         &.vk svg { fill: #2573CE; }
+         &.pint svg { fill: #F92424; }
+         &.insta svg { fill: #8F025F; }
+         &.twitter svg { fill: #3A9AD0; }
+         &.face svg { fill: #4148F9; }
+      }
+   }
+   & > svg {
+      stroke: $decoration-color-1;
+      width: 58px;
+      height: 14px;
+      @media all and (max-width: 470px) {
+         display: none;
+      }
+   }
+}
+

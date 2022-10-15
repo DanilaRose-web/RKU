@@ -1,0 +1,57 @@
+<div class="wrap-modal request-modal">
+    <div class="modal-window request-modal-window">
+        <section class="modal-wrap">
+            <div class="container-fluid modal-container">
+                <div class="modal-form-wrap">
+                    <h3 class="form-title">Оставить заявку</h3>
+                    <div class="note"></div>
+                    <form id="form-contact" method="POST" class="request-form">
+                        <p class="form-text">Заполните необходимые поля, и мы вам перезвоним в течение 15 минут</p>
+
+                        <!-- Hidden Required Fields -->
+                        <input type="hidden" name="project_name" value="BKB">
+                        <input type="hidden" name="admin_email" value="bkb@bkb-company.ru">
+                        <input type="hidden" name="form_subject" value="Request form">
+                        <!-- END Hidden Required Fields -->
+
+                        <div class="input-wrap">
+                            <div class="form-item">
+                                <input required type="text" name="Имя" id="name" placeholder="Ваше имя" class="form-input">
+                                <div class="message-error-name message-error">Введите ваше имя</div>
+                            </div>
+
+                            <div class="form-item"> 
+                                <input required type="tel" name="Телефон" id="phone" placeholder="Ваш телефон" class="form-input input-phone">
+                                <div class="message-error-phone message-error">Введите номер телефона</div>
+                            </div>
+                        </div>
+
+                        <div class="submit-block">
+                           <div class="checkbox flex">
+                              <label class="c-custom-checkbox">
+                                 <input type="checkbox" required />
+                                 <svg width="50" height="50" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
+                                    <rect class="checkbox__bg" width="35" height="35" x="-2" y="-2" stroke="currentColor" fill="none" stroke-width="2" rx="6" ry="6"></rect>
+                                    <polyline class="checkbox__checkmark" points="4,14 12,23 28,5" stroke="transparent" stroke-width="4" fill="none"></polyline>
+                                 </svg>
+                                 <span>Я даю согласие на обработку моих персональных данных (конфиденциальность гарантируется)</span>
+                              </label>
+                           </div>
+                           <button type="submit" class="section-button sm-btn" placeholder="Отправить"><span>Отправить</span></button>
+
+                        </div>
+                    </form>
+                        
+                    <div class="response-result"></div>
+      
+
+                    <div class="close-modal">
+                       <img src="@img/close.png" alt="">
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+    <div class="modal-overlay request-overlay"></div>
+</div>

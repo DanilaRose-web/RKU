@@ -1,0 +1,500 @@
+.wrap-modal {
+   padding: 15px 15px;
+   width: 100%;
+   height: 100%;
+   min-height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 10;
+   visibility: hidden;
+   background-color: rgba(0, 0, 0, 0);
+   display: flex;
+   align-items: center;
+   -webkit-transition: all 0.3s linear;
+   transition: all 0.3s linear;
+   &.popup-modal {
+      display: block;
+   }
+}
+
+.wrap-modal.show {
+   background-color: rgba(0, 0, 0, 0.93);
+   visibility: visible;
+   -webkit-transition: all 0.3s linear;
+   transition: all 0.3s linear;
+   overflow-y: auto;
+}
+
+.modal-overlay {
+   width: 100%;
+   height: 100%;
+   visibility: hidden;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1;
+   -webkit-transition: all 0.3s linear;
+   transition: all 0.3s linear;
+}
+
+.modal-overlay.show {
+   visibility: visible;
+   -webkit-transition: all 0.3s linear;
+   transition: all 0.3s linear;
+}
+
+.modal-window {
+   margin: 25px auto;
+   max-width: 448px;
+   width: 100%;
+   position: relative;
+   z-index: 3;
+   opacity: 0;
+   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   background: url('../img/dist/footer-bg1.webp') repeat center;
+   visibility: hidden;
+   border-radius: 25px;
+   -webkit-transition: all 0.3s linear;
+   transition: all 0.3s linear;
+   &.popup-modal-window {
+      max-width: 1300px;
+      height: 100%;
+   }
+}
+
+.modal-window.show {
+   opacity: 1;
+   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   visibility: visible;
+   -webkit-transition: all 0.3s linear;
+   transition: all 0.3s linear;
+}
+
+.modal-wrap {
+   padding: 25px 0;
+   margin: 0 auto;
+   max-width: 448px;
+   position: relative;
+   background-size: cover;
+   &.slide-modal-wrap {
+      max-width: 1300px;
+      height: 100%;
+   }
+}
+
+.modal-container {
+   padding: 0 15px;
+   position: relative;
+   height: 100%;
+   &.slide-modal-container {
+      height: 100%;
+      display: inline-grid;
+      align-items: center;
+      @media all and (min-width: 1200px) and (max-height: 850px) {
+         height: 100%;
+      }
+   }
+}
+
+.modal-form-wrap {
+   position: relative;
+}
+
+/* .close-modal {
+   position: absolute;
+   top: -33px;
+   right: -5px;
+   font-size: 22px;
+   cursor: pointer;
+   color: black;
+   border: none;
+   outline: none;
+   background-color: transparent;
+   -webkit-transition: -webkit-transform 0.2s;
+   transition: -webkit-transform 0.2s;
+   transition: transform 0.2s;
+   transition: transform 0.2s, -webkit-transform 0.2s;
+} */
+
+.close-modal {
+   margin: 0;
+   padding: 0;
+   position: absolute;
+   top: 0;
+   right: 0;
+   opacity: 1;
+   cursor: pointer;
+   z-index: 1;
+   &.slide-close {
+      right: 0;
+   }
+}
+
+
+.modal-title {
+   font-family: Montserrat, sans-serif;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 20px;
+   line-height: 140%;
+   letter-spacing: -0.01em;
+   color: #FFFFFF;
+   border: none;
+}
+
+.modal-subtitle {
+   margin: 0 auto;
+   margin-bottom: 15px;
+   text-align: center;
+   font-weight: 600;
+   color: #fff;
+   font-size: 18px;
+   line-height: 1.2;
+}
+
+.form-title {
+   text-align: center;
+   margin: 0 auto;
+   margin-bottom: 15px;
+   text-align: center;
+   font-weight: 600;
+   color: #ed1b24;
+   font-size: 18px;
+   position: relative;
+   line-height: 1.2;
+}
+
+
+
+
+.response-result {
+   color: white;
+}
+
+@media all and (max-width: 860px) {
+   .modal-container { padding: 0 15px; }
+   .input-modal { max-width: 100%; }
+}
+
+@media all and (max-width: 770px) {
+   .wrap-modal .modal-title { font-size: calc((100vw - 280px)/(770 - 280) * (49 - 33) + 33px); }
+}
+
+@media all and (max-height: 500px) {
+   .wrap-modal { display: block; }
+}
+
+@media all and (max-width: 670px) {
+   .form-modal-request { flex-direction: column; }
+   .input-modal { margin-bottom: 10px; }
+   .btn-modal { max-width: 100%; margin-left: 0; margin-top: 0; }
+}
+
+@media all and (max-width: 570px) {
+   .modal { padding: 70px 0; }
+}
+
+@media all and (max-width: 560px) {
+   .wrap-modal .modal-subtitle { font-size: calc((100vw - 280px)/(560 - 280) * (18 - 16) + 16px); }
+}
+
+@media all and (max-width: 430px) {
+   .modal-container { padding: 0; }
+}
+
+@media all and (max-height: 600px) {
+   .wrap-modal { display: block; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// form
+.modal-form-wrap {
+   border-radius: 5px;
+}
+
+.request-form {
+   padding-top: 25px;
+   padding-left: 25px;
+   padding-right: 25px;
+   background: #E4E8EB;
+}
+
+.form-title {  
+   margin-bottom: 0;
+   padding: 23px 0 20px 0;
+   font-weight: 600;
+   font-size: 22px;
+   line-height: 27px;
+   text-transform: uppercase;
+   text-align: center;
+   color: $text-color-lightness;
+   background: linear-gradient(-90deg, #EC6517 65.1%, #F18522 99.99%);
+   opacity: 0.95;
+}
+
+.form-text {
+   padding: 0 12px;
+   margin-bottom: 10px;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 150%;
+   color: #404B56;
+   text-align: center;
+}
+
+.form-text a {
+   margin-left: 5px;
+   display: inline-block;
+   font-weight: 600;
+   color: white;
+   transition: all 0.3s ease;
+}
+.form-text a:hover {
+   color: #dac4f0;
+   transform: translateX(10px);
+}
+
+
+.input-wrap {
+   margin-top: 25px;
+}
+
+input {
+   padding: 0 6px 0 26px;
+   background: #565069;
+   display: flex;
+   align-items: center;
+   height: 52px;
+   width: 100%;
+   font-weight: 600;
+   font-size: 14px;
+   line-height: 24px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 0.1px;
+   color: #929AA5;
+   background: #FFFFFF;
+   border: 1px solid transparent;
+}
+
+.form-item:first-child {
+   margin-bottom: 17px;
+}
+
+.form-item.error input {
+   margin-bottom: 0;
+   border: 1px solid red;
+}
+
+
+.message-error-name, .message-error-phone {
+
+   padding-top: 10px;
+   font-weight: 500;
+   font-size: 12px;
+   color: red;
+   display: none;
+}
+
+
+.submit-block {
+   padding-top: 30px;
+   padding-bottom: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+.submit-btn {
+   margin-right: 15px;
+}
+
+.confidentional-title {
+   padding: 15px 25px 15px 25px;
+   text-align: center;
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 15px;
+   color: #FFFFFF;
+   background: #565069;
+}
+
+
+
+
+
+
+/* checkbox */
+
+.c-custom-checkbox {
+   margin-bottom: 28px;
+   position: relative;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   color: #7D7D7D;
+}
+
+.c-custom-checkbox.error {
+   color: red;
+}
+
+.c-custom-checkbox span {
+   margin-left: 8px;
+   font-size: 12px;
+   line-height: 18px;
+   color: #404B56;
+}
+
+/* Убираем стандартный input, делая его прозрачным и убираем из основного потока, 
+   оставляя также возможность реагирования пользователя с ним. display: none и visibility: hidden не подходят, так как они убирают
+   возможность польователя взаимодействовать с элементом */
+.c-custom-checkbox input[type=checkbox] {
+   margin: 0;
+   position: absolute;
+   opacity: 0;
+   width: 20px;
+   height: 20px;
+}
+
+/* визуально показать контур фокуса, когда SVG получает фокус */
+.c-custom-checkbox input[type="checkbox"]:focus + svg {
+   /* outline: 3px solid #E55360;
+   outline-offset: 3px; */
+}
+
+/* скрыть стили фокуса для пользователей мыши - обратная реакция */
+.c-custom-checkbox input[type="checkbox"]:focus:not(:focus-visible) + svg {
+   outline: none;
+}
+
+.c-custom-checkbox svg {
+ width: 20px;
+ height: 20px;
+ min-width: 20px;
+ min-height: 20px;
+}
+
+* {
+transition: all 0.1s linear;
+}
+
+/* style changes inside the svg when the checkbox is checked */
+/* Для c-custom-checkbox нахожу дочерний элемент .checkbox__bg, который лежит в svg, который является дочерним к c-custom-checkbox и, который стоит после input  */
+.c-custom-checkbox input[type="checkbox"]:checked + svg .checkbox__bg {
+   fill: #fff;
+   stroke: #fff;
+}
+
+.c-custom-checkbox input[type="checkbox"]:checked + svg .checkbox__checkmark {
+   stroke: $decoration-color-1;
+}
+
+
+/* оптимизация для режима высокой контрастности Windows */
+.c-custom-checkbox svg {
+ @media screen and (-ms-high-contrast: active) {
+   .checkbox__bg {
+     stroke: windowText;
+   }
+ }
+}
+
+@media screen and (-ms-high-contrast: active) {
+   .c-custom-checkbox input[type="checkbox"]:checked + svg .checkbox__bg {
+       fill: windowText;
+   }
+
+   .c-custom-checkbox input[type="checkbox"]:checked + svg .checkbox__checkmark {
+       stroke: highlight;
+   }
+}
+
+
+
+
+
+
+
+
+
+::-webkit-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+   color: #BABDBF;
+   font-weight: 400;
+}
+:-moz-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+   color: #BABDBF;
+   font-weight: 400;
+   opacity: 1; /* Firefox */
+}
+::-moz-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+   color: #BABDBF;
+   font-weight: 400;
+   opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+   color: #BABDBF;
+   font-weight: 400;
+   opacity: 1; /* Firefox */
+}
+::-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+   color: #BABDBF;
+   font-weight: 400;
+   opacity: 1; /* Firefox */
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+   color: #BABDBF;
+   font-weight: 400;
+   opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #BABDBF;
+   font-weight: 400;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: #BABDBF;
+   font-weight: 400;
+}
+
+
+
+
+.response-result {
+   padding: 70px 25px;
+   text-align: center;
+   font-size: 16px;
+   font-weight: 600;
+   line-height: 120%;
+   background: #352F46;
+   display: none;
+}
+
+checkbox.checked {
+   text-decoration: none;
+}
+
+@media all and (max-width: 430px) {
+   .request-form { padding-left: 12px; padding-right: 12px; }
+}
+
+@media all and (max-width: 400px) {
+   .submit-btn { margin-bottom: 10px; }
+   .form-title { font-size: calc((100vw - 280px)/(400 - 280) * (22 - 18) + 18px);  }
+}
+
+@media all and (max-width: 350px) {
+   .form-title { padding: 17px 0 15px; }
+   .submit-block { flex-direction: column; align-items: center; width: 100%; }
+}

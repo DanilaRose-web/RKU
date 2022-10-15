@@ -1,0 +1,27 @@
+.i-close {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 22px;
+   height: 22px;
+   position: absolute;
+   z-index: 2;
+   top: 25px;
+   left: 25px;
+   cursor: pointer;
+}
+
+.i-close svg {
+   width: 22px;
+   height: 22px;
+   fill: $text-color-lightness;
+   transition: all 0.1s ease-out;
+}
+
+.i-close:hover svg {
+   fill: $decoration-color-1;
+}
+
+.i-close:active svg {
+   transform: scale(0.8);
+}

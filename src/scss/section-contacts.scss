@@ -1,0 +1,169 @@
+.section-contacts {
+   padding: 123px 0 200px 0;
+   position: relative;
+   background: url('../img/contacts/bg.jpg') no-repeat center / cover;
+   overflow: hidden;
+   .decr-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 834px;
+      z-index: 1;
+      @media all and (max-width: 1900px) {
+         left: calc((100vw - 1240px) / (1900 - 1240) * (0 + 190) - 190px);
+         width: calc((100vw - 1240px) / (1900 - 1240) * (834 - 600) + 600px);
+      }
+      @media all and (max-width: 1240px) {
+         left: -190px;
+         width: 600px;
+      }
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+   &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: linear-gradient(180deg, #FFFFFF 51.87%, rgba(255, 255, 255, 0.86) 79.48%, rgba(255, 255, 255, 0.2) 100%);
+   }
+   .grid {
+      display: grid;
+      grid-template-columns: 1fr 2.5fr;
+      grid-template-rows: auto;
+      gap: 48px;
+      @media all and (max-width: 860px) {
+         grid-template-columns: 1fr;
+         grid-template-rows: 1fr;
+         gap: 30px;
+      }
+      .grid-item {
+         &.relative {
+            position: relative;
+         }
+         iframe {
+            height: 568px;
+            @media all and (max-width: 860px) {
+               height: 400px;
+            }
+         }
+         .contacts-title {
+            margin-bottom: 119px;
+         }
+         
+         .contacts-info {
+            margin-bottom: 72px;
+            .info-item {
+               display: flex;
+               align-items: center;
+               transition: all 0.2s ease-out;
+                &:hover {
+                  transform: translateX(5px);
+                  .text {
+                     color: $decoration-color-1;
+                  }
+               }
+               @media all and (max-width: 500px) {
+                  width: auto;
+               }
+               .icon {
+                  margin-right: 15px;
+                  width: 40px;
+                  height: 40px;
+                  min-width: 40px;
+                  min-height: 40px;
+                  background: linear-gradient(90deg, #EC6517 65.1%, #F18522 99.99%);
+                  border-radius: 3px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  transition: all 0.2s ease-out;
+               }
+               .text {
+                  font-family: 'Lato', sans-serif;
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: 150%;
+                  color: $links-color;
+                  position: relative;
+                  &::after {
+                     content: '';
+                     position: absolute;
+                     bottom: 0;
+                     left: 0;
+                     width: 0;
+                     height: 1px;
+                     background: $decoration-color-1;
+                     transition: all 0.2s ease-out;
+                  }
+               }
+               &:not(:last-child) {
+                  margin-bottom: 23px;
+               }
+            }
+            a.info-item {
+               &:hover {
+                  .text {
+                     text-decoration: underline;
+                     color: $decoration-color-1;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+
+
+
+
+.contacts-social {
+   padding: 16px 0;
+   display: flex;
+   align-items: center;
+   border-bottom: 1px solid #676767;
+   @media all and (max-width: 860px) {
+      bottom: -60px;
+   }
+   @media all and (max-width: 500px) {
+      padding: 15px 20px;
+      position: relative;
+      left: 0;
+      bottom: 0;
+   }
+
+   @media all and (max-width: 470px) {
+      padding: 15px 20px;
+   }
+   a {
+      margin-right: 34px;
+      display: flex;
+      width: 21px;
+      height: 21px;
+      @media all and (max-width: 500px) {
+         margin-right: 20px;
+      }
+      svg {
+         max-width: 100%;
+         height: auto;
+         fill: #676767;
+         transition: all 0.2s ease-out;
+      }
+      &:hover {
+         svg {
+            transform: rotateY(360deg);
+         }
+         &.vk svg { fill: #2573CE; }
+         &.pint svg { fill: #F92424; }
+         &.insta svg { fill: #8F025F; }
+         &.twitter svg { fill: #3A9AD0; }
+         &.face svg { fill: #4148F9; }
+      }
+   }
+}
